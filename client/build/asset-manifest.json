@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/static/css/main.6dea0f05.chunk.css",
+    "main.js": "/static/js/main.261b19c6.chunk.js",
+    "main.js.map": "/static/js/main.261b19c6.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.c68a99f6.js",
+    "runtime-main.js.map": "/static/js/runtime-main.c68a99f6.js.map",
+    "static/css/2.85f7760d.chunk.css": "/static/css/2.85f7760d.chunk.css",
+    "static/js/2.2fc21429.chunk.js": "/static/js/2.2fc21429.chunk.js",
+    "static/js/2.2fc21429.chunk.js.map": "/static/js/2.2fc21429.chunk.js.map",
+    "static/js/3.85015455.chunk.js": "/static/js/3.85015455.chunk.js",
+    "static/js/3.85015455.chunk.js.map": "/static/js/3.85015455.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/2.85f7760d.chunk.css.map": "/static/css/2.85f7760d.chunk.css.map",
+    "static/css/main.6dea0f05.chunk.css.map": "/static/css/main.6dea0f05.chunk.css.map",
+    "static/js/2.2fc21429.chunk.js.LICENSE.txt": "/static/js/2.2fc21429.chunk.js.LICENSE.txt",
+    "static/media/Squidnet_logo.1642d5c8.png": "/static/media/Squidnet_logo.1642d5c8.png",
+    "static/media/semantic.min.css": "/static/media/outline-icons.ddae9b1b.woff"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c68a99f6.js",
+    "static/css/2.85f7760d.chunk.css",
+    "static/js/2.2fc21429.chunk.js",
+    "static/css/main.6dea0f05.chunk.css",
+    "static/js/main.261b19c6.chunk.js"
+  ]
+}
