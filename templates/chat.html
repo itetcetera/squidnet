@@ -12,6 +12,20 @@
         <input type="text" id="message_input" placeholder="enter your message">
         <button type="submit">send</button>
     </form>
+    <!-- <script>
+        function send_vid(){
+            fetch("http://127.0.0.1:5000/video_feed", {
+                method: "POST"
+            }).then(response => location.reload())
+        }
+        window.onload = () => {document.getElementById('pog').onsubmit = send_vid}
+    </script> -->
+    <form method="POST" action="/video_feed">
+        <button type="submit" id="vid_button">show video</button>
+    </form>
+    <!-- <img src="{{ video }}"> -->
+    <img style="-webkit-user-select: none;margin: auto;" src="http://127.0.0.1:5000/video_feed"> 
+    <!-- <img src="http://127.0.0.1:5000/video_feed"> -->
   </body>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.5/socket.io.js"></script>
     

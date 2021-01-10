@@ -1,5 +1,6 @@
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request, redirect, Response
 from flask_socketio import SocketIO, send, join_room
+import video_record_file
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'poggers'
@@ -21,6 +22,13 @@ def chat():
         return render_template('chat.html', username=username, room=room)
     else:
         return redirect('/')
+
+@app.route('/video_feed', methods=['GET', 'POST'])
+def video_record():
+    if(request.method == 'POST'):
+        camera = video_record_file.start_camera()
+        return Response(video_record_file.gen_frames(camera), mimetype='multipart/x-mixed-replace; boundary=frame')
+        #return redirect('chat.html', video=video_record_file.gen_frames(camera))
 
 @socketio.on('join_room')
 def handle_join_room_event(data):

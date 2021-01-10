@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <title>chat2</title>
+  </head>
+  <body>
+    <h1>chat2</h1>
+    <h2>welcome to video {{ room }}</h2>
+
+    <div id="messages"></div>
+    <form id="video_start_button">
+        <button type="submit">start video</button>
+    </form>
+  </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.5/socket.io.js"></script>
+    
+  <script>
+      const socket = io.connect("http://127.0.0.1:5000");
+
+  </script>
+  </html>
