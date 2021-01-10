@@ -5,7 +5,7 @@ function Websocker(){
 
     const [image, setImage] = useState('')
 
-    var socket = SocketIOClient('http://127.0.0.1:5000')
+    var socket = SocketIOClient('https://squidnet.herokuapp.com')
 
     socket.on('connect', () => {
         console.log('HYPR')

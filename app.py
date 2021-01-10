@@ -30,7 +30,7 @@ def websocket():
     t.daemon = True
     t.start()
 
-    return app.send_static_fil('index.html')
+    return app.send_static_file('index.html')
 
 
 
