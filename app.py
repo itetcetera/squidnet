@@ -11,7 +11,7 @@ app.debug = True
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('video.html')
 
 @app.route('/chat')
 def chat():
@@ -29,6 +29,33 @@ def video_record():
         camera = video_record_file.start_camera()
         return Response(video_record_file.gen_frames(camera), mimetype='multipart/x-mixed-replace; boundary=frame')
         #return redirect('chat.html', video=video_record_file.gen_frames(camera))
+
+@socketio.on('image')
+def image(data_image):
+    sbuf = StringIO()
+    sbuf.write(data_image)
+
+    # decode and convert into image
+    b = io.BytesIO(base64.b64decode(data_image))
+    pimg = Image.open(b)
+
+    ## converting RGB to BGR, as opencv standards
+    frame = cv2.cvtColor(np.array(pimg), cv2.COLOR_RGB2BGR)
+
+    # Process the image frame
+    frame = imutils.resize(frame, width=700)
+    frame = cv2.flip(frame, 1)
+    frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+
+    imgencode = cv2.imencode('.jpg', frame)[1]
+
+    # base64 encode
+    stringData = base64.b64encode(imgencode).decode('utf-8')
+    b64_src = 'data:image/jpg;base64,'
+    stringData = b64_src + stringData
+
+    # emit the frame back
+    emit('response_back', stringData)
 
 @socketio.on('join_room')
 def handle_join_room_event(data):
