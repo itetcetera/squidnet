@@ -8,6 +8,7 @@ import {
 import 'semantic-ui-css/semantic.min.css'
 import HomePage from "./core/homepage"
 import NetworkPage from './core/networking';
+import Websocker from './core/websocket';
 
 function App() {
   return (
@@ -16,8 +17,8 @@ function App() {
         <Route path='/networking'>
           <NetworkPage />
         </Route>
-        <Route exact path="/">
-          <HomePage />
+        <Route exact path="/websocket">
+          <Websocker />
         </Route>
       </Switch>
     </Router>
